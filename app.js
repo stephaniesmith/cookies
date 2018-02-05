@@ -1,34 +1,41 @@
 const cookiesAirport = {
     location: 'PDX Airport',
-    minHourly: 
-    maxHourly:
-    averageCookies:
+    minHourly: 23,
+    maxHourly: 65,
+    averageCookies: 6.3, 
+    customersHour: function () {
+        const min = Math.ceil(this.minHourly);
+        const max = Math.floor(this.maxHourly);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 };
+
+console.log(cookiesAirport.customersHour());
 
 const cookiesPioneer = {
     location: 'Pioneer Square',
-    minHourly:
-    maxHourly:
-    averageCookies:
+    minHourly: 3,
+    maxHourly: 24,
+    averageCookies: 1.2,
 };
 
 const cookiesPowells = {
     location: 'Powell\'s',
-    minHourly:
-    maxHourly:
-    averageCookies:
+    minHourly: 11,
+    maxHourly: 38,
+    averageCookies: 3.7,
 };
 
 const cookiesJohn = {
     location: 'St. John\'s',
-    minHourly:
-    maxHourly:
-    averageCookies:
+    minHourly: 20,
+    maxHourly: 38,
+    averageCookies: 2.3,
 };
 
 const cookiesWaterfront = {
     location: 'Waterfront',
-    minHourly:
-    maxHourly:
-    averageCookies:
+    minHourly: 2,
+    maxHourly: 16,
+    averageCookies: 4.6,
 };
