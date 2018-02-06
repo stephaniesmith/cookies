@@ -66,41 +66,9 @@ johns.calcCookies();
 johns.totalCookies();
 johns.renderCookies();
 
+const waterfront = new Store ('Waterfront', 2, 16, 4.6, 'waterfront');
+console.log(waterfront);
 
-// const cookiesWaterfront = {
-//     location: 'Waterfront',
-//     minHourly: 2,
-//     maxHourly: 16,
-//     averageCookies: 4.6,
-//     hourlyArray: [],
-//     calcCookies: function () {
-//         const min = Math.ceil(this.minHourly);
-//         const max = Math.floor(this.maxHourly);
-//         for (let i = 0; i < 15; i++) {
-//             const customersPerHour =  Math.floor(Math.random() * (max - min + 1)) + min;
-//             const cookiesPerHour = Math.round(customersPerHour * this.averageCookies);
-//             this.hourlyArray.push(cookiesPerHour);
-//         }
-//     },
-//     totalCookies: function () {
-//         let total = 0;
-//         for (let j = 0; j < 15; j++) {
-//             total = total + this.hourlyArray[j];
-//         }
-//         this.hourlyArray.push(total);
-//     },
-//     renderCookies: function () {
-//         for (let i = 0; i < this.hourlyArray.length; i++) {
-//             const list = document.getElementById('waterfront');
-//             const li = document.createElement('li');
-//             li.textContent = time[i] + this.hourlyArray[i] + ' cookies';
-//             list.appendChild(li);
-//         }
-//     }
-// };
-
-// console.log('this is the array: ' + cookiesWaterfront.hourlyArray);
-// console.log('this is the function: ' + cookiesWaterfront.calcCookies());
-// console.log('this is the array: ' + cookiesWaterfront.hourlyArray);
-// console.log('this is the total: ' + cookiesWaterfront.totalCookies());
-// console.log('render' + cookiesWaterfront.renderCookies());
+waterfront.calcCookies();
+waterfront.totalCookies();
+waterfront.renderCookies();
