@@ -38,20 +38,37 @@ const cookiesPioneer = {
     minHourly: 3,
     maxHourly: 24,
     averageCookies: 1.2,
-    customersHour: function () {
+    hourlyArray: [],
+    calcCookies: function () {
         const min = Math.ceil(this.minHourly);
         const max = Math.floor(this.maxHourly);
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+        for (let i = 0; i < 15; i++) {
+            const customersPerHour =  Math.floor(Math.random() * (max - min + 1)) + min;
+            const cookiesPerHour = Math.round(customersPerHour * this.averageCookies);
+            this.hourlyArray.push(cookiesPerHour);
+        }
+    },
+    renderCookies: function () {
+        for (let i = 0; i < this.hourlyArray.length; i++) {
+            const list = document.getElementById('pioneer');
+            const li = document.createElement('li');
+            li.textContent = time[i] + this.hourlyArray[i] + ' cookies';
+            list.appendChild(li);
+        }
     }
 };
 
-console.log(cookiesPioneer.customersHour() * cookiesPioneer.averageCookies);
+console.log('this is the array: ' + cookiesPioneer.hourlyArray);
+console.log('this is the function: ' + cookiesPioneer.calcCookies());
+console.log('this is the array: ' + cookiesPioneer.hourlyArray);
+console.log('render' + cookiesPioneer.renderCookies());
 
 const cookiesPowells = {
     location: 'Powell\'s',
     minHourly: 11,
     maxHourly: 38,
     averageCookies: 3.7,
+    hourlyArray: [],
     customersHour: function () {
         const min = Math.ceil(this.minHourly);
         const max = Math.floor(this.maxHourly);
@@ -66,6 +83,7 @@ const cookiesJohn = {
     minHourly: 20,
     maxHourly: 38,
     averageCookies: 2.3,
+    hourlyArray: [],
     customersHour: function () {
         const min = Math.ceil(this.minHourly);
         const max = Math.floor(this.maxHourly);
@@ -80,6 +98,7 @@ const cookiesWaterfront = {
     minHourly: 2,
     maxHourly: 16,
     averageCookies: 4.6,
+    hourlyArray: [],
     customersHour: function () {
         const min = Math.ceil(this.minHourly);
         const max = Math.floor(this.maxHourly);
