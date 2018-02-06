@@ -1,6 +1,6 @@
 'use strict';
 
-const time = ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: ', '8pm: '];
+const time = ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: ', '8pm: ', 'Total: '];
 
 const cookiesAirport = {
     location: 'PDX Airport',
@@ -17,6 +17,13 @@ const cookiesAirport = {
             this.hourlyArray.push(cookiesPerHour);
         }
     },
+    totalCookies: function () {
+        let total = 0;
+        for (let j = 0; j < 15; j++) {
+            total = total + this.hourlyArray[j];
+        }
+        this.hourlyArray.push(total);
+    },
     renderCookies: function () {
         for (let i = 0; i < this.hourlyArray.length; i++) {
             const list = document.getElementById('airport');
@@ -30,6 +37,7 @@ const cookiesAirport = {
 console.log('this is the array: ' + cookiesAirport.hourlyArray);
 console.log('this is the function: ' + cookiesAirport.calcCookies());
 console.log('this is the array: ' + cookiesAirport.hourlyArray);
+console.log('this is the total: ' + cookiesAirport.totalCookies());
 console.log('render' + cookiesAirport.renderCookies());
 
 
@@ -48,6 +56,13 @@ const cookiesPioneer = {
             this.hourlyArray.push(cookiesPerHour);
         }
     },
+    totalCookies: function () {
+        let total = 0;
+        for (let j = 0; j < 15; j++) {
+            total = total + this.hourlyArray[j];
+        }
+        this.hourlyArray.push(total);
+    },
     renderCookies: function () {
         for (let i = 0; i < this.hourlyArray.length; i++) {
             const list = document.getElementById('pioneer');
@@ -61,6 +76,7 @@ const cookiesPioneer = {
 console.log('this is the array: ' + cookiesPioneer.hourlyArray);
 console.log('this is the function: ' + cookiesPioneer.calcCookies());
 console.log('this is the array: ' + cookiesPioneer.hourlyArray);
+console.log('this is the total: ' + cookiesPioneer.totalCookies());
 console.log('render' + cookiesPioneer.renderCookies());
 
 const cookiesPowells = {
@@ -69,14 +85,17 @@ const cookiesPowells = {
     maxHourly: 38,
     averageCookies: 3.7,
     hourlyArray: [],
-    customersHour: function () {
+    calcCookies: function () {
         const min = Math.ceil(this.minHourly);
         const max = Math.floor(this.maxHourly);
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 };
 
-console.log(cookiesPowells.customersHour() * cookiesPowells.averageCookies);
+console.log('this is the array: ' + cookiesPowells.hourlyArray);
+console.log('this is the function: ' + cookiesPowells.calcCookies());
+console.log('this is the array: ' + cookiesPowells.hourlyArray);
+console.log('render' + cookiesPowells.renderCookies());
 
 const cookiesJohn = {
     location: 'St. John\'s',
@@ -84,14 +103,17 @@ const cookiesJohn = {
     maxHourly: 38,
     averageCookies: 2.3,
     hourlyArray: [],
-    customersHour: function () {
+    calcCookies: function () {
         const min = Math.ceil(this.minHourly);
         const max = Math.floor(this.maxHourly);
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 };
 
-console.log(cookiesJohn.customersHour() * cookiesJohn.averageCookies);
+console.log('this is the array: ' + cookiesJohn.hourlyArray);
+console.log('this is the function: ' + cookiesJohn.calcCookies());
+console.log('this is the array: ' + cookiesJohn.hourlyArray);
+console.log('render' + cookiesJohn.renderCookies());
 
 const cookiesWaterfront = {
     location: 'Waterfront',
@@ -99,11 +121,14 @@ const cookiesWaterfront = {
     maxHourly: 16,
     averageCookies: 4.6,
     hourlyArray: [],
-    customersHour: function () {
+    calcCookies: function () {
         const min = Math.ceil(this.minHourly);
         const max = Math.floor(this.maxHourly);
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 };
 
-console.log(cookiesWaterfront.customersHour() * cookiesWaterfront.averageCookies);
+console.log('this is the array: ' + cookiesWaterfront.hourlyArray);
+console.log('this is the function: ' + cookiesWaterfront.calcCookies());
+console.log('this is the array: ' + cookiesWaterfront.hourlyArray);
+console.log('render' + cookiesWaterfront.renderCookies());
