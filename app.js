@@ -1,4 +1,5 @@
 const cookiesAirport = {
+    id: 'airport',
     location: 'PDX Airport',
     minHourly: 23,
     maxHourly: 65,
@@ -7,17 +8,27 @@ const cookiesAirport = {
     calcCookies: function () {
         const min = Math.ceil(this.minHourly);
         const max = Math.floor(this.maxHourly);
-        for (let i = 0; i < 8; i++) {
+        for (let i = 0; i < 15; i++) {
             const customersPerHour =  Math.floor(Math.random() * (max - min + 1)) + min;
             const cookiesPerHour = customersPerHour * this.averageCookies;
             this.hourlyArray.push(cookiesPerHour);
         }
     },
+    renderCookies: function () {
+        for (let i = 0; i < this.hourlyArray.length; i++) {
+            const list = document.getElementById('airport');
+            const li = document.createElement('li');
+            li.textContent = this.hourlyArray[i];
+            list.appendChild(li);
+        }
+    }
 };
 
-// console.log(cookiesAirport.customersHour() * cookiesAirport.averageCookies);
+console.log('this is the array: ' + cookiesAirport.hourlyArray);
 console.log('this is the function: ' + cookiesAirport.calcCookies());
 console.log('this is the array: ' + cookiesAirport.hourlyArray);
+console.log('render' + cookiesAirport.renderCookies());
+
 
 // const cookiesPioneer = {
 //     location: 'Pioneer Square',
