@@ -1,5 +1,8 @@
+'use strict';
+
+const time = ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: ', '8pm: '];
+
 const cookiesAirport = {
-    id: 'airport',
     location: 'PDX Airport',
     minHourly: 23,
     maxHourly: 65,
@@ -10,7 +13,7 @@ const cookiesAirport = {
         const max = Math.floor(this.maxHourly);
         for (let i = 0; i < 15; i++) {
             const customersPerHour =  Math.floor(Math.random() * (max - min + 1)) + min;
-            const cookiesPerHour = customersPerHour * this.averageCookies;
+            const cookiesPerHour = Math.round(customersPerHour * this.averageCookies);
             this.hourlyArray.push(cookiesPerHour);
         }
     },
@@ -18,7 +21,7 @@ const cookiesAirport = {
         for (let i = 0; i < this.hourlyArray.length; i++) {
             const list = document.getElementById('airport');
             const li = document.createElement('li');
-            li.textContent = this.hourlyArray[i];
+            li.textContent = time[i] + this.hourlyArray[i] + ' cookies';
             list.appendChild(li);
         }
     }
@@ -30,58 +33,58 @@ console.log('this is the array: ' + cookiesAirport.hourlyArray);
 console.log('render' + cookiesAirport.renderCookies());
 
 
-// const cookiesPioneer = {
-//     location: 'Pioneer Square',
-//     minHourly: 3,
-//     maxHourly: 24,
-//     averageCookies: 1.2,
-//     customersHour: function () {
-//         const min = Math.ceil(this.minHourly);
-//         const max = Math.floor(this.maxHourly);
-//         return Math.floor(Math.random() * (max - min + 1)) + min;
-//     }
-// };
+const cookiesPioneer = {
+    location: 'Pioneer Square',
+    minHourly: 3,
+    maxHourly: 24,
+    averageCookies: 1.2,
+    customersHour: function () {
+        const min = Math.ceil(this.minHourly);
+        const max = Math.floor(this.maxHourly);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+};
 
-// console.log(cookiesPioneer.customersHour() * cookiesPioneer.averageCookies);
+console.log(cookiesPioneer.customersHour() * cookiesPioneer.averageCookies);
 
-// const cookiesPowells = {
-//     location: 'Powell\'s',
-//     minHourly: 11,
-//     maxHourly: 38,
-//     averageCookies: 3.7,
-//     customersHour: function () {
-//         const min = Math.ceil(this.minHourly);
-//         const max = Math.floor(this.maxHourly);
-//         return Math.floor(Math.random() * (max - min + 1)) + min;
-//     }
-// };
+const cookiesPowells = {
+    location: 'Powell\'s',
+    minHourly: 11,
+    maxHourly: 38,
+    averageCookies: 3.7,
+    customersHour: function () {
+        const min = Math.ceil(this.minHourly);
+        const max = Math.floor(this.maxHourly);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+};
 
-// console.log(cookiesPowells.customersHour() * cookiesPowells.averageCookies);
+console.log(cookiesPowells.customersHour() * cookiesPowells.averageCookies);
 
-// const cookiesJohn = {
-//     location: 'St. John\'s',
-//     minHourly: 20,
-//     maxHourly: 38,
-//     averageCookies: 2.3,
-//     customersHour: function () {
-//         const min = Math.ceil(this.minHourly);
-//         const max = Math.floor(this.maxHourly);
-//         return Math.floor(Math.random() * (max - min + 1)) + min;
-//     }
-// };
+const cookiesJohn = {
+    location: 'St. John\'s',
+    minHourly: 20,
+    maxHourly: 38,
+    averageCookies: 2.3,
+    customersHour: function () {
+        const min = Math.ceil(this.minHourly);
+        const max = Math.floor(this.maxHourly);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+};
 
-// console.log(cookiesJohn.customersHour() * cookiesJohn.averageCookies);
+console.log(cookiesJohn.customersHour() * cookiesJohn.averageCookies);
 
-// const cookiesWaterfront = {
-//     location: 'Waterfront',
-//     minHourly: 2,
-//     maxHourly: 16,
-//     averageCookies: 4.6,
-//     customersHour: function () {
-//         const min = Math.ceil(this.minHourly);
-//         const max = Math.floor(this.maxHourly);
-//         return Math.floor(Math.random() * (max - min + 1)) + min;
-//     }
-// };
+const cookiesWaterfront = {
+    location: 'Waterfront',
+    minHourly: 2,
+    maxHourly: 16,
+    averageCookies: 4.6,
+    customersHour: function () {
+        const min = Math.ceil(this.minHourly);
+        const max = Math.floor(this.maxHourly);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+};
 
-// console.log(cookiesWaterfront.customersHour() * cookiesWaterfront.averageCookies);
+console.log(cookiesWaterfront.customersHour() * cookiesWaterfront.averageCookies);
