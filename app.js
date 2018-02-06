@@ -164,11 +164,31 @@ const cookiesWaterfront = {
     calcCookies: function () {
         const min = Math.ceil(this.minHourly);
         const max = Math.floor(this.maxHourly);
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+        for (let i = 0; i < 15; i++) {
+            const customersPerHour =  Math.floor(Math.random() * (max - min + 1)) + min;
+            const cookiesPerHour = Math.round(customersPerHour * this.averageCookies);
+            this.hourlyArray.push(cookiesPerHour);
+        }
+    },
+    totalCookies: function () {
+        let total = 0;
+        for (let j = 0; j < 15; j++) {
+            total = total + this.hourlyArray[j];
+        }
+        this.hourlyArray.push(total);
+    },
+    renderCookies: function () {
+        for (let i = 0; i < this.hourlyArray.length; i++) {
+            const list = document.getElementById('waterfront');
+            const li = document.createElement('li');
+            li.textContent = time[i] + this.hourlyArray[i] + ' cookies';
+            list.appendChild(li);
+        }
     }
 };
 
 console.log('this is the array: ' + cookiesWaterfront.hourlyArray);
 console.log('this is the function: ' + cookiesWaterfront.calcCookies());
 console.log('this is the array: ' + cookiesWaterfront.hourlyArray);
+console.log('this is the total: ' + cookiesWaterfront.totalCookies());
 console.log('render' + cookiesWaterfront.renderCookies());
