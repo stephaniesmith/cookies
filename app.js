@@ -32,6 +32,8 @@ Store.prototype.totalCookies = function () {
 };
 
 Store.prototype.buildTable = function () {
+    this.calcCookies();
+    this.totalCookies();
     const tbody = document.getElementById('tbody');
     const tr = document.createElement('tr');
     const td = document.createElement('td');
@@ -50,36 +52,26 @@ buildHeader();
 const airport = new Store ('PDX Airport', 23, 65, 6.3, 'airport');
 console.log(airport);
 
-airport.calcCookies();
-airport.totalCookies();
 airport.buildTable();
 
 const pioneer = new Store ('Pioneer Square', 3, 24, 1.2, 'pioneer');
 console.log(pioneer);
 
-pioneer.calcCookies();
-pioneer.totalCookies();
 pioneer.buildTable();
 
 const powells = new Store ('Powell\'s', 11, 38, 3.7, 'powells');
 console.log(powells);
 
-powells.calcCookies();
-powells.totalCookies();
 powells.buildTable();
 
 const johns = new Store ('St. John\'s', 20, 38, 2.3, 'johns');
 console.log(johns);
 
-johns.calcCookies();
-johns.totalCookies();
 johns.buildTable();
 
 const waterfront = new Store ('Waterfront', 2, 16, 4.6, 'waterfront');
 console.log(waterfront);
 
-waterfront.calcCookies();
-waterfront.totalCookies();
 waterfront.buildTable();
 
 buildFooter();
