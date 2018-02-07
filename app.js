@@ -9,7 +9,6 @@ function Store(location, minHourly, maxHourly, averageCookies, parentId) {
     this.minHourly = minHourly;
     this.maxHourly = maxHourly;
     this.averageCookies = averageCookies;
-    this.parentId = parentId;
     this.hourlyArray = [];
 };
 
@@ -49,27 +48,27 @@ Store.prototype.buildTable = function () {
 
 buildHeader();
 
-const airport = new Store ('PDX Airport', 23, 65, 6.3, 'airport');
+const airport = new Store ('PDX Airport', 23, 65, 6.3);
 console.log(airport);
 
 airport.buildTable();
 
-const pioneer = new Store ('Pioneer Square', 3, 24, 1.2, 'pioneer');
+const pioneer = new Store ('Pioneer Square', 3, 24, 1.2);
 console.log(pioneer);
 
 pioneer.buildTable();
 
-const powells = new Store ('Powell\'s', 11, 38, 3.7, 'powells');
+const powells = new Store ('Powell\'s', 11, 38, 3.7);
 console.log(powells);
 
 powells.buildTable();
 
-const johns = new Store ('St. John\'s', 20, 38, 2.3, 'johns');
+const johns = new Store ('St. John\'s', 20, 38, 2.3);
 console.log(johns);
 
 johns.buildTable();
 
-const waterfront = new Store ('Waterfront', 2, 16, 4.6, 'waterfront');
+const waterfront = new Store ('Waterfront', 2, 16, 4.6);
 console.log(waterfront);
 
 waterfront.buildTable();
@@ -93,3 +92,27 @@ function buildFooter() {
         tr.appendChild(th);
     };
 };
+
+
+
+
+
+
+const form = document.querySelector('form');
+form.addEventListener('submit', function() {
+    event.preventDefault();
+    console.log('I\'m listening');
+
+    const storeLocation = document.getElementById('location').value;
+    // console.log('store location: ', storeLocation);
+
+    // console.log('store local', this.location.value);
+
+    const location = this.location.value;
+    const min = this.min.value;
+    const max = this.max.value;
+    const average = this.average.value;
+
+    console.log(location, min, max, average);
+
+});
