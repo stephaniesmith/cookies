@@ -2,9 +2,9 @@
 
 const time = ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: ', '8pm: ', 'Total: '];
 
-const footer = ['total', 'total', 'total', 'total', 'total', 'total', 'total', 'total', 'total', 'total', 'total', 'total', 'total', 'total', 'total', 'total', 'total'];
+const footer = ['total', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-function Store(location, minHourly, maxHourly, averageCookies, parentId) {
+function Store(location, minHourly, maxHourly, averageCookies) {
     this.location = location;
     this.minHourly = minHourly;
     this.maxHourly = maxHourly;
@@ -25,7 +25,7 @@ Store.prototype.calcCookies = function () {
 Store.prototype.totalCookies = function () {
     let total = 0;
     for (let j = 0; j < 15; j++) {
-        total = total + this.hourlyArray[j];
+        total += this.hourlyArray[j];
     }
     this.hourlyArray.push(total);
 };
@@ -43,6 +43,8 @@ Store.prototype.buildTable = function () {
         td.textContent = this.hourlyArray[m];
         tr.appendChild(td);
         tbody.appendChild(tr);
+
+        footer[m + 1] += this.hourlyArray[m];
     }
 };
 
