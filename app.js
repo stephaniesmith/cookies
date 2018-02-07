@@ -96,20 +96,10 @@ function buildFooter() {
 const form = document.querySelector('form');
 form.addEventListener('submit', function() {
     event.preventDefault();
-    console.log('I\'m listening');
-
-    const storeLocation = document.getElementById('location').value;
-    // console.log('store location: ', storeLocation);
-
-    // console.log('store local', this.location.value);
-
     const location = this.location.value;
     const min = this.min.value;
     const max = this.max.value;
     const average = this.average.value;
-
-    console.log(location, min, max, average);
-
     const newStore = new Store (location, min, max, average);
     newStore.buildTable();
 });
