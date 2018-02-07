@@ -93,11 +93,6 @@ function buildFooter() {
     };
 };
 
-
-
-
-
-
 const form = document.querySelector('form');
 form.addEventListener('submit', function() {
     event.preventDefault();
@@ -115,4 +110,6 @@ form.addEventListener('submit', function() {
 
     console.log(location, min, max, average);
 
+    const newStore = new Store (location, min, max, average);
+    newStore.buildTable();
 });
