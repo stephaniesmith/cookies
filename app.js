@@ -31,51 +31,60 @@ Store.prototype.totalCookies = function () {
     this.hourlyArray.push(total);
 };
 
-Store.prototype.renderCookies = function () {
-    for (let i = 0; i < this.hourlyArray.length; i++) {
-        const list = document.getElementById(this.parentId);
-        const li = document.createElement('li');
-        li.textContent = time[i] + this.hourlyArray[i] + ' cookies';
-        list.appendChild(li);
+Store.prototype.buildTable = function () {
+    const tbody = document.getElementById('tbody');
+    const tr = document.createElement('tr');
+    const td = document.createElement('td');
+    td.textContent = this.location;
+    tr.appendChild(td);
+    for (let m = 0; m < this.hourlyArray.length; m++) {
+        const td = document.createElement('td');
+        td.textContent = this.hourlyArray[m];
+        tr.appendChild(td);
+        tbody.appendChild(tr);
     }
 };
+
+buildHeader();
 
 const airport = new Store ('PDX Airport', 23, 65, 6.3, 'airport');
 console.log(airport);
 
 airport.calcCookies();
 airport.totalCookies();
-airport.renderCookies();
+airport.buildTable();
 
-// const pioneer = new Store ('Pioneer Square', 3, 24, 1.2, 'pioneer');
-// console.log(pioneer);
+const pioneer = new Store ('Pioneer Square', 3, 24, 1.2, 'pioneer');
+console.log(pioneer);
 
-// pioneer.calcCookies();
-// pioneer.totalCookies();
-// pioneer.renderCookies();
+pioneer.calcCookies();
+pioneer.totalCookies();
+pioneer.buildTable();
 
-// const powells = new Store ('Powell\'s', 11, 38, 3.7, 'powells');
-// console.log(powells);
+const powells = new Store ('Powell\'s', 11, 38, 3.7, 'powells');
+console.log(powells);
 
-// powells.calcCookies();
-// powells.totalCookies();
-// powells.renderCookies();
+powells.calcCookies();
+powells.totalCookies();
+powells.buildTable();
 
-// const johns = new Store ('St. John\'s', 20, 38, 2.3, 'johns');
-// console.log(johns);
+const johns = new Store ('St. John\'s', 20, 38, 2.3, 'johns');
+console.log(johns);
 
-// johns.calcCookies();
-// johns.totalCookies();
-// johns.renderCookies();
+johns.calcCookies();
+johns.totalCookies();
+johns.buildTable();
 
-// const waterfront = new Store ('Waterfront', 2, 16, 4.6, 'waterfront');
-// console.log(waterfront);
+const waterfront = new Store ('Waterfront', 2, 16, 4.6, 'waterfront');
+console.log(waterfront);
 
-// waterfront.calcCookies();
-// waterfront.totalCookies();
-// waterfront.renderCookies();
+waterfront.calcCookies();
+waterfront.totalCookies();
+waterfront.buildTable();
 
-const buildHeader = function () {
+buildFooter();
+
+function buildHeader() {
     for (let k = 0; k < time.length; k++) {
         const tr = document.getElementById('header-row');
         const th = document.createElement('th');
@@ -84,22 +93,7 @@ const buildHeader = function () {
     };
 };
 
-const buildTable = function () {
-    const tbody = document.getElementById('tbody');
-    const tr = document.createElement('tr');
-    const td = document.createElement('td');
-    td.textContent = airport.location;
-    tr.appendChild(td);
-    for (let m = 0; m < footer.length - 1; m++) {
-        const td = document.createElement('td');
-        td.textContent = airport.hourlyArray[m];
-        tr.appendChild(td);
-        tbody.appendChild(tr);
-    }
-};
-
-
-const buildFooter = function () {
+function buildFooter() {
     for (let n = 0; n < footer.length; n++) {
         const tr = document.getElementById('footer-row');
         const th = document.createElement('th');
@@ -107,7 +101,3 @@ const buildFooter = function () {
         tr.appendChild(th);
     };
 };
-
-buildHeader();
-buildTable();
-buildFooter();
