@@ -1,5 +1,35 @@
+/* * {
+    border: 2px solid black;
+} */
+
+body {
+    background-color:rgba(238, 140, 110, 0.397);
+}
+
+header img {
+    width: 75%;
+    display: block;
+    margin: 50px auto 75px auto;
+}
+
+header h1 {
+    font-family: 'Megrim', cursive;
+    text-align: center;
+    font-size: 400%;
+}
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+}
+
+main section {
+    background-color: white;
+    width: 100%;
+    margin: 0px 50px;
+}
 .insta {
-    width: 15%;
+    width: 200px;
     float: right;
     margin-right: 25px;
 
