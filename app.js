@@ -64,33 +64,50 @@ console.log(waterfront);
 
 const storeLocation = [airport, pioneer, powells, johns, waterfront];
 
-function buildHeader() {
+const buildHeader = function() {
+    const thead = document.querySelector('thead');
+    const tr = document.createElement('tr');
+    const th = document.createElement('th');
+    th.textContent = 'Store Locations';
+    tr.appendChild(th);
+    thead.appendChild(tr);
     for (let k = 0; k < time.length; k++) {
-        const tr = document.getElementById('header-row');
+        const tr = document.querySelector('tr');
         const th = document.createElement('th');
         th.textContent = time[k];
         tr.appendChild(th);
     };
 };
 
-buildTable();
-
-function buildFooter() {
+const buildFooter = function () {
+    const table = document.querySelector('table');
+    const tfoot = document.createElement('tfoot');
+    const tr = document.createElement('tr');
+    table.appendChild(tfoot);
+    tfoot.appendChild(tr);
     for (let n = 0; n < footer.length; n++) {
-        const tr = document.getElementById('footer-row');
-        const th = document.createElement('th');
-        th.textContent = footer[n];
-        tr.appendChild(th);
+        const td = document.createElement('td');
+        td.textContent = footer[n];
+        tr.appendChild(td);
     };
+    console.log('Working');
 };
 
-function buildTable() {
+const removeFooter = function() {
+    // const table = document.querySelector('table');
+    const tfoot = document.querySelector('tfoot');
+    tfoot.remove();
+};
+
+const buildTable = function () {
     buildHeader();
     for (let s = 0; s < storeLocation.length; s++) {
         storeLocation[s].render();
     }
     buildFooter();
 };
+
+buildTable();
 
 const form = document.querySelector('form');
 form.addEventListener('submit', function() {
@@ -101,4 +118,6 @@ form.addEventListener('submit', function() {
     const average = this.average.value;
     const newStore = new Store (location, min, max, average);
     newStore.render();
+    removeFooter();
+    buildFooter();
 });
