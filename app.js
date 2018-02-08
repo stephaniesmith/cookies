@@ -30,7 +30,7 @@ Store.prototype.totalCookies = function () {
     this.hourlyArray.push(total);
 };
 
-Store.prototype.buildTable = function () {
+Store.prototype.render = function () {
     this.calcCookies();
     this.totalCookies();
     const tbody = document.getElementById('tbody');
@@ -43,39 +43,28 @@ Store.prototype.buildTable = function () {
         td.textContent = this.hourlyArray[m];
         tr.appendChild(td);
         tbody.appendChild(tr);
-
         footer[m + 1] += this.hourlyArray[m];
     }
 };
 
-buildHeader();
-
 const airport = new Store ('PDX Airport', 23, 65, 6.3);
 console.log(airport);
-
-airport.buildTable();
 
 const pioneer = new Store ('Pioneer Square', 3, 24, 1.2);
 console.log(pioneer);
 
-pioneer.buildTable();
-
 const powells = new Store ('Powell\'s', 11, 38, 3.7);
 console.log(powells);
-
-powells.buildTable();
 
 const johns = new Store ('St. John\'s', 20, 38, 2.3);
 console.log(johns);
 
-johns.buildTable();
-
 const waterfront = new Store ('Waterfront', 2, 16, 4.6);
 console.log(waterfront);
 
-waterfront.buildTable();
+const storeLocation = [airport, pioneer, powells, johns, waterfront];
 
-buildFooter();
+buildTable();
 
 function buildHeader() {
     for (let k = 0; k < time.length; k++) {
@@ -95,6 +84,14 @@ function buildFooter() {
     };
 };
 
+function buildTable() {
+    buildHeader();
+    for (let s = 0; s < storeLocation.length; s++) {
+        storeLocation[s].render();
+    }
+    buildFooter();
+};
+
 const form = document.querySelector('form');
 form.addEventListener('submit', function() {
     event.preventDefault();
@@ -103,5 +100,5 @@ form.addEventListener('submit', function() {
     const max = this.max.value;
     const average = this.average.value;
     const newStore = new Store (location, min, max, average);
-    newStore.buildTable();
+    newStore.render();
 });
