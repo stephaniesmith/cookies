@@ -64,8 +64,6 @@ console.log(waterfront);
 
 const storeLocation = [airport, pioneer, powells, johns, waterfront];
 
-buildTable();
-
 function buildHeader() {
     for (let k = 0; k < time.length; k++) {
         const tr = document.getElementById('header-row');
@@ -74,6 +72,8 @@ function buildHeader() {
         tr.appendChild(th);
     };
 };
+
+buildTable();
 
 function buildFooter() {
     for (let n = 0; n < footer.length; n++) {
