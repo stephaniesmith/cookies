@@ -5,11 +5,30 @@
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
+    <form>
+      <fieldset>
+        <legend>Pat's Cookies</legend>
+
+        <label for="location">Store Location</label>
+        <input type="text" id="location" name="location" required>
+
+        <label for="min">Min</label>
+        <input type="number" id="min" name="min" required>
+
+        <label for="max">Max</label>
+        <input type="number" id="max" name="max" required>
+
+        <label for="average">Average</label>
+        <input type="number" id="average" name="average" step="0.1" required>
+
+        <button type="submit">Add Store</button>
+      </fieldset>
+    </form>
     <section>
         <table>
           <thead>
             <tr id="header-row">
-              <th></th>
+              <th>Store Locations</th>
             </tr>
           </thead>
           <tbody id="tbody">
