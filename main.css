@@ -1,6 +1,9 @@
 /* * {
     border: 2px solid black;
 } */
+body {
+    padding: 0px;
+}
 
 form, #table {
     width: fit-content;
@@ -57,11 +60,12 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: top;
+    height: 2000px;
 }
 
 main section {
     background-color: white;
-    width: 100%;
+    width: 80%;
     margin: 0px 50px;
 }
 
@@ -89,7 +93,14 @@ p {
 
 .insta {
     width: 200px;
-    float: right;
-    margin-right: 25px;
+    /* float: right; */
+    margin-right: 20px;
+    height: fit-content;
+}
 
+footer section {
+    background-color: white;
+    width: 100%;
+    margin: 0px;
+    height: 100px;
 }
