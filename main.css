@@ -7,13 +7,14 @@ form, #table {
     display: block;
     margin: 40px auto;
     font-family: 'Raleway', sans-serif;
+    background-color: white;
+    padding: 10px;
 }
 
 #table {
     width: fit-content;
     display: block;
     margin: 40px auto;
-    padding: 0;
 }
 
 th, td {
@@ -32,7 +33,7 @@ tfoot {
 }
 
 body {
-    background-color:rgba(238, 140, 110, 0.397);
+    background-color:rgba(255, 204, 189, 0.884);
 }
 
 header img {
@@ -45,6 +46,7 @@ header h1 {
     font-family: 'Megrim', cursive;
     text-align: center;
     font-size: 400%;
+    color:rgb(238, 140, 110);
 }
 
 #about img {
@@ -70,6 +72,15 @@ main section section {
 
 h2 {
     font-family: 'Raleway', sans-serif;
+    color:rgba(255, 204, 189, 0.884);
+}
+
+p {
+    font-family: 'Nixie One', serif;
+    kerning: 30px;
+    line-height: 20px;
+    font-weight: bold;
+    color:rgb(68, 68, 68);
 }
 
 #merch img {
