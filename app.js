@@ -2,14 +2,13 @@
 
 const time = ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: ', '8pm: ', 'Total: '];
 
-const footer = ['total', 'total', 'total', 'total', 'total', 'total', 'total', 'total', 'total', 'total', 'total', 'total', 'total', 'total', 'total', 'total', 'total'];
+const footer = ['total', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-function Store(location, minHourly, maxHourly, averageCookies, parentId) {
+function Store(location, minHourly, maxHourly, averageCookies) {
     this.location = location;
     this.minHourly = minHourly;
     this.maxHourly = maxHourly;
     this.averageCookies = averageCookies;
-    this.parentId = parentId;
     this.hourlyArray = [];
 };
 
@@ -26,12 +25,12 @@ Store.prototype.calcCookies = function () {
 Store.prototype.totalCookies = function () {
     let total = 0;
     for (let j = 0; j < 15; j++) {
-        total = total + this.hourlyArray[j];
+        total += this.hourlyArray[j];
     }
     this.hourlyArray.push(total);
 };
 
-Store.prototype.buildTable = function () {
+Store.prototype.render = function () {
     this.calcCookies();
     this.totalCookies();
     const tbody = document.getElementById('tbody');
@@ -44,52 +43,81 @@ Store.prototype.buildTable = function () {
         td.textContent = this.hourlyArray[m];
         tr.appendChild(td);
         tbody.appendChild(tr);
+        footer[m + 1] += this.hourlyArray[m];
     }
 };
 
-buildHeader();
-
-const airport = new Store ('PDX Airport', 23, 65, 6.3, 'airport');
+const airport = new Store ('PDX Airport', 23, 65, 6.3);
 console.log(airport);
 
-airport.buildTable();
-
-const pioneer = new Store ('Pioneer Square', 3, 24, 1.2, 'pioneer');
+const pioneer = new Store ('Pioneer Square', 3, 24, 1.2);
 console.log(pioneer);
 
-pioneer.buildTable();
-
-const powells = new Store ('Powell\'s', 11, 38, 3.7, 'powells');
+const powells = new Store ('Powell\'s', 11, 38, 3.7);
 console.log(powells);
 
-powells.buildTable();
-
-const johns = new Store ('St. John\'s', 20, 38, 2.3, 'johns');
+const johns = new Store ('St. John\'s', 20, 38, 2.3);
 console.log(johns);
 
-johns.buildTable();
-
-const waterfront = new Store ('Waterfront', 2, 16, 4.6, 'waterfront');
+const waterfront = new Store ('Waterfront', 2, 16, 4.6);
 console.log(waterfront);
 
-waterfront.buildTable();
+const storeLocation = [airport, pioneer, powells, johns, waterfront];
 
-buildFooter();
-
-function buildHeader() {
+const buildHeader = function() {
+    const thead = document.querySelector('thead');
+    const tr = document.createElement('tr');
+    const th = document.createElement('th');
+    th.textContent = 'Store Locations';
+    tr.appendChild(th);
+    thead.appendChild(tr);
     for (let k = 0; k < time.length; k++) {
-        const tr = document.getElementById('header-row');
+        const tr = document.querySelector('tr');
         const th = document.createElement('th');
         th.textContent = time[k];
         tr.appendChild(th);
     };
 };
 
-function buildFooter() {
+const buildFooter = function () {
+    const table = document.querySelector('table');
+    const tfoot = document.createElement('tfoot');
+    const tr = document.createElement('tr');
+    table.appendChild(tfoot);
+    tfoot.appendChild(tr);
     for (let n = 0; n < footer.length; n++) {
-        const tr = document.getElementById('footer-row');
-        const th = document.createElement('th');
-        th.textContent = footer[n];
-        tr.appendChild(th);
+        const td = document.createElement('td');
+        td.textContent = footer[n];
+        tr.appendChild(td);
     };
+    console.log('Working');
 };
+
+const removeFooter = function() {
+    // const table = document.querySelector('table');
+    const tfoot = document.querySelector('tfoot');
+    tfoot.remove();
+};
+
+const buildTable = function () {
+    buildHeader();
+    for (let s = 0; s < storeLocation.length; s++) {
+        storeLocation[s].render();
+    }
+    buildFooter();
+};
+
+buildTable();
+
+const form = document.querySelector('form');
+form.addEventListener('submit', function() {
+    event.preventDefault();
+    const location = this.location.value;
+    const min = this.min.value;
+    const max = this.max.value;
+    const average = this.average.value;
+    const newStore = new Store (location, min, max, average);
+    newStore.render();
+    removeFooter();
+    buildFooter();
+});
