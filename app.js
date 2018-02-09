@@ -94,7 +94,6 @@ const buildFooter = function () {
 };
 
 const removeFooter = function() {
-    // const table = document.querySelector('table');
     const tfoot = document.querySelector('tfoot');
     tfoot.remove();
 };
