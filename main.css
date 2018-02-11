@@ -1,11 +1,159 @@
-table {
-    border: 1px solid black;
-} 
+/* * {
+    border: 2px solid black;
+} */
 
-th {
-    border: 1px solid black;
+body {
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    background-color:rgba(255, 204, 189, 0.884);
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow-x: hidden;
 }
+
+form, #table {
+    width: fit-content;
+    display: block;
+    margin: 40px auto;
+    font-family: 'Raleway', sans-serif;
+    background-color: white;
+    padding: 10px;
+}
+
+#table {
+    width: fit-content;
+    display: block;
+    margin: 40px auto;
+}
+
+th, td {
+    font-family: 'Raleway', sans-serif;
+    padding: 7px;
+}
+
+/* table {
+    border: 1px solid black;
+}  */
+
+/* th {
+    border: 1px solid black;
+} */
 
 td {
     border: 1px solid black;
+    margin: 0px;
+}
+
+tr {
+    margin: 0px;
+}
+
+tfoot {
+    font-weight: bold; 
+}
+
+header img {
+    width: 75%;
+    display: block;
+    margin: 0px auto 75px auto;
+}
+
+header h1 {
+    font-family: 'Megrim', cursive;
+    text-align: center;
+    font-size: 400%;
+    color:rgb(238, 140, 110);
+    position: sticky;
+    top: 200px;
+    align-self: flex-start
+}
+
+#about img {
+    width: 60%;
+    float: left;
+    margin: 0px 20px 0px 20px;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    height: fit-content;
+    margin-bottom: 375px;
+}
+
+.left-panel {
+    background-color: white;
+    margin: 0px 20px 0px 40px;
+    border-radius: 15px;
+    height: fit-content;
+    padding: 20px;
+}
+
+main section section {
+    width: fit-content;
+    height: fit-content;
+    display: block;
+}
+
+h2 {
+    font-family: 'Raleway', sans-serif;
+    color:rgba(255, 204, 189, 0.884);
+}
+
+p {
+    font-family: 'Nixie One', serif;
+    kerning: 30px;
+    line-height: 20px;
+    font-weight: bold;
+    color:rgb(68, 68, 68);
+}
+
+#merch {
+    margin: 125px 0px 0px 0px;
+}
+
+#merch div img {
+    width: 32%;
+    margin: 2px;
+}
+
+#merch div {
+    margin: 0px auto 0px auto;
+    width: fit-content;
+}
+
+.insta div {
+    width: 200px;
+}
+
+.insta {
+    width: fit-content;
+    margin: 0px 40px 0px 0px;
+    height: fit-content;
+    padding: 10px;
+}
+
+footer {
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    height: 300px;
+    bottom: 0px;
+    right: 0px;
+    left:  0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    margin-top: 375px;
+}
+
+footer section {
+    display: inline-block;
+    width: 33%;
+    text-align: center;    
 }
