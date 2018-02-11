@@ -59,7 +59,7 @@ tfoot {
 header img {
     width: 75%;
     display: block;
-    margin: 0px auto 75px auto;
+    margin: 36px auto 0px auto;
 }
 
 header h1 {
@@ -67,15 +67,15 @@ header h1 {
     text-align: center;
     font-size: 400%;
     color:rgb(238, 140, 110);
-    position: sticky;
-    top: 200px;
-    align-self: flex-start
+    height: fit-content;
+    margin: 50px auto 30px auto;
+    padding: 0px;
 }
 
 #about img {
     width: 60%;
     float: left;
-    margin: 0px 20px 0px 20px;
+    margin: 0px 20px 0px 0px;
 }
 
 main {
@@ -88,21 +88,32 @@ main {
 
 .left-panel {
     background-color: white;
-    margin: 0px 20px 0px 40px;
+    margin: 0px 20px 0px 45px;
     border-radius: 15px;
     height: fit-content;
-    padding: 20px;
+    padding: 0px 20px 0px 20px;
+    width: 70%;
 }
 
 main section section {
     width: fit-content;
     height: fit-content;
     display: block;
+    margin: 0px 25px 50px 25px;
 }
 
 h2 {
     font-family: 'Raleway', sans-serif;
     color:rgba(255, 204, 189, 0.884);
+    font-size: 200%;
+    margin-left: 25px;
+    height: fit-content;
+}
+
+h3 {
+    font-family: 'Megrim', cursive;
+    text-align: center;
+    color:rgb(238, 140, 110);
 }
 
 p {
@@ -113,9 +124,9 @@ p {
     color:rgb(68, 68, 68);
 }
 
-#merch {
-    margin: 125px 0px 0px 0px;
-}
+/* #merch {
+    margin: 0px 0px 0px 0px;
+} */
 
 #merch div img {
     width: 32%;
@@ -127,15 +138,22 @@ p {
     width: fit-content;
 }
 
-.insta div {
-    width: 200px;
+#divider {
+    height: 10px;
+    width: 100%;
+    background-color:rgba(255, 204, 189, 0.884);
 }
+
+/* .insta div {
+    width: 25%;
+} */
 
 .insta {
     width: fit-content;
     margin: 0px 40px 0px 0px;
     height: fit-content;
     padding: 10px;
+    width: 25%;
 }
 
 footer {
