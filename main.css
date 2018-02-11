@@ -1,6 +1,7 @@
 /* * {
     border: 2px solid black;
 } */
+
 body {
     padding: 0px;
     margin: 0px;
@@ -32,6 +33,17 @@ form, #table {
 th, td {
     font-family: 'Raleway', sans-serif;
     padding: 7px;
+}
+
+/* table {
+    border: 1px solid black;
+}  */
+
+/* th {
+    border: 1px solid black;
+} */
+
+td {
     border: 1px solid black;
     margin: 0px;
 }
