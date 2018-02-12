@@ -1,7 +1,3 @@
-/* * {
-    border: 2px solid black;
-} */
-
 body {
     padding: 0px;
     margin: 0px;
@@ -35,14 +31,6 @@ th, td {
     padding: 7px;
 }
 
-/* table {
-    border: 1px solid black;
-}  */
-
-/* th {
-    border: 1px solid black;
-} */
-
 td {
     border: 1px solid black;
     margin: 0px;
@@ -56,10 +44,17 @@ tfoot {
     font-weight: bold; 
 }
 
+header {
+    background-color: white;
+    padding-top: 40px;
+    padding-bottom: 25px;
+    margin-bottom: 40px;
+}
+
 header img {
     width: 75%;
     display: block;
-    margin: 36px auto 0px auto;
+    margin: 0px auto 0px auto;
 }
 
 header h1 {
@@ -68,14 +63,14 @@ header h1 {
     font-size: 400%;
     color:rgb(238, 140, 110);
     height: fit-content;
-    margin: 50px auto 30px auto;
+    margin: 25px auto 0px auto;
     padding: 0px;
 }
 
 #about img {
     width: 60%;
     float: left;
-    margin: 0px 20px 0px 0px;
+    margin: 0px 20px 20px 0px;
 }
 
 main {
@@ -83,7 +78,7 @@ main {
     justify-content: space-between;
     align-items: top;
     height: fit-content;
-    margin-bottom: 375px;
+    margin-bottom: 250px;
 }
 
 .left-panel {
@@ -96,10 +91,10 @@ main {
 }
 
 main section section {
-    width: fit-content;
+    /* width: fit-content; */
     height: fit-content;
     display: block;
-    margin: 0px 25px 50px 25px;
+    margin: 0px 25px 30px 25px;
 }
 
 h2 {
@@ -124,17 +119,45 @@ p {
     color:rgb(68, 68, 68);
 }
 
-/* #merch {
-    margin: 0px 0px 0px 0px;
-} */
+#menu h2 {
+    margin-bottom: 0px;
+}
+
+#menu table {
+    width: 100%;
+    margin: 0px auto 25px 20px;
+}
+
+#menu-header th {
+    font-family: 'Megrim', cursive;
+    text-align: center;
+    color:rgb(238, 140, 110);
+    font-size: 200%;
+    width: 49%;
+}
+
+#menu-row td {
+    font-family: 'Nixie One', serif;
+    padding: 7px;
+    border: none;
+}
+
+#food {
+    width: 38%;
+}
 
 #merch div img {
     width: 32%;
     margin: 2px;
 }
 
-#merch div {
+#shirts {
     margin: 0px auto 0px auto;
+    width: fit-content;
+}
+
+#coming-soon {
+    margin-bottom: 50px;
     width: fit-content;
 }
 
@@ -143,10 +166,6 @@ p {
     width: 100%;
     background-color:rgba(255, 204, 189, 0.884);
 }
-
-/* .insta div {
-    width: 25%;
-} */
 
 .insta {
     width: fit-content;
@@ -160,18 +179,26 @@ footer {
     position: absolute;
     background-color: white;
     width: 100%;
-    height: 300px;
+    height: 200px;
     bottom: 0px;
     right: 0px;
     left:  0px;
     display: flex;
     justify-content: space-between;
     align-items: top;
-    margin-top: 375px;
 }
 
 footer section {
     display: inline-block;
     width: 33%;
     text-align: center;    
+}
+
+footer section h3 {
+    font-size: 200%;
+    margin: 30px auto 15px auto;
+}
+
+footer section p {
+    margin: 5px;
 }
