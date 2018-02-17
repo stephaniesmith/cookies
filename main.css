@@ -57,6 +57,10 @@ header img {
     margin: 0px auto 0px auto;
 }
 
+#fish-link:hover {
+    transform: scale(1.01);
+}
+
 header h1 {
     font-family: 'Megrim', cursive;
     text-align: center;
