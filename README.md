@@ -8,6 +8,9 @@ In this project I made a public-facing website for the fictional store Pat's Sal
 
 ## Getting Started
 Look around the public-facing site to get to know Pat's Salmon Cookies better. On the sales site use the from to update the information and see how many cookies are being sold in each location.
+
+## Site URL
+https://stephaniesmith.github.io/cookies/
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running?-->
 
 
