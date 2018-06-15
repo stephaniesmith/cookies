@@ -1,24 +1,47 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My test page</title>
+    <title>Sales Page</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
-    <h1>PDX Airport</h1>
-    <ul id="airport">
-    </ul>
-    <h1>Pioneer Square</h1>
-    <ul id="pioneer">
-    </ul>
-    <h1>Powell's </h1>
-    <ul id="powells">
-    </ul>
-    <h1>St. John's</h1>
-    <ul id="johns">
-    </ul>
-    <h1>Waterfront</h1>
-    <ul id="waterfront">
-    </ul>
-    <script src="app.js"></script>
+    <header>
+      <a href="index.html">
+        <img src="img/salmon.png" alt="salmon" id="fish-link">
+      </a>
+        <h1>Pat's Salmon Cookies</h1>
+    </header>
+    <form>
+      <fieldset>
+        <legend>Pat's Cookies</legend>
+
+        <label for="location">Store Location</label>
+        <input type="text" id="location" name="location" required>
+
+        <label for="min">Min</label>
+        <input type="number" id="min" name="min" required>
+
+        <label for="max">Max</label>
+        <input type="number" id="max" name="max" required>
+
+        <label for="average">Average</label>
+        <input type="number" id="average" name="average" step="0.1" required>
+
+        <button type="submit">Add Store</button>
+      </fieldset>
+    </form>
+    <section id="table">
+        <table>
+          <thead>
+
+          </thead>
+          <tbody id="tbody">
+  
+          </tbody>
+
+        </table>
+      </section>
+      <script src="app.js"></script>
   </body>
 </html>

@@ -1,0 +1,227 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    background-color:rgba(255, 204, 189, 0.884);
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow-x: hidden;
+}
+
+form, #table {
+    width: fit-content;
+    display: block;
+    margin: 40px auto;
+    font-family: 'Raleway', sans-serif;
+    background-color: white;
+    padding: 10px;
+}
+
+#table {
+    width: fit-content;
+    display: block;
+    margin: 40px auto;
+}
+
+th, td {
+    font-family: 'Raleway', sans-serif;
+    padding: 7px;
+}
+
+td {
+    border: 1px solid black;
+    margin: 0px;
+}
+
+tr {
+    margin: 0px;
+}
+
+tfoot {
+    font-weight: bold; 
+}
+
+header {
+    background-color: white;
+    padding-top: 40px;
+    padding-bottom: 25px;
+    margin-bottom: 40px;
+}
+
+header img {
+    width: 75%;
+    display: block;
+    margin: 0px auto 0px auto;
+}
+
+#fish-link:hover {
+    transform: scale(1.01);
+}
+
+header h1 {
+    font-family: 'Megrim', cursive;
+    text-align: center;
+    font-size: 400%;
+    color:rgb(238, 140, 110);
+    height: fit-content;
+    margin: 25px auto 0px auto;
+    padding: 0px;
+}
+
+#about img {
+    width: 60%;
+    float: left;
+    margin: 0px 20px 20px 0px;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    height: fit-content;
+    margin-bottom: 250px;
+}
+
+.left-panel {
+    background-color: white;
+    margin: 0px 20px 0px 45px;
+    border-radius: 15px;
+    height: fit-content;
+    padding: 0px 20px 0px 20px;
+    width: 70%;
+}
+
+main section section {
+    /* width: fit-content; */
+    height: fit-content;
+    display: block;
+    margin: 0px 25px 30px 25px;
+}
+
+h2 {
+    font-family: 'Raleway', sans-serif;
+    color:rgba(255, 204, 189, 0.884);
+    font-size: 200%;
+    margin-left: 25px;
+    height: fit-content;
+}
+
+h3 {
+    font-family: 'Megrim', cursive;
+    text-align: center;
+    color:rgb(238, 140, 110);
+}
+
+p {
+    font-family: 'Nixie One', serif;
+    kerning: 30px;
+    line-height: 20px;
+    font-weight: bold;
+    color:rgb(68, 68, 68);
+}
+
+#menu h2 {
+    margin-bottom: 0px;
+}
+
+#menu table {
+    width: 100%;
+    margin: 0px auto 25px 20px;
+}
+
+#menu-header th {
+    font-family: 'Megrim', cursive;
+    text-align: center;
+    color:rgb(238, 140, 110);
+    font-size: 200%;
+    width: 49%;
+}
+
+#menu-row td {
+    font-family: 'Nixie One', serif;
+    padding: 7px;
+    border: none;
+}
+
+#food {
+    width: 38%;
+}
+
+#merch div img {
+    width: 32%;
+    margin: 2px;
+}
+
+#shirts {
+    margin: 0px auto 0px auto;
+    width: fit-content;
+}
+
+#coming-soon {
+    margin-bottom: 50px;
+    width: fit-content;
+}
+
+#divider {
+    height: 10px;
+    width: 100%;
+    background-color:rgba(255, 204, 189, 0.884);
+}
+
+.insta {
+    width: fit-content;
+    margin: 0px 40px 0px 0px;
+    height: fit-content;
+    padding: 10px;
+    width: 25%;
+}
+
+footer {
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    height: 225px;
+    bottom: 0px;
+    right: 0px;
+    left:  0px;
+}
+
+#footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+}
+
+footer section {
+    display: inline-block;
+    width: 33%;
+    text-align: center;  
+    height: fit-content;  
+    margin-bottom: 30px;
+}
+
+footer section h3 {
+    font-size: 200%;
+    margin: 30px auto 15px auto;
+}
+
+footer section p {
+    margin: 5px;
+}
+
+#bottom-button {
+    width: fit-content;
+    margin: auto;
+}
+
+#sales {
+    background-color: rgb(238, 140, 110);
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+}
